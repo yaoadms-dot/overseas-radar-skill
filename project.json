@@ -15,7 +15,7 @@
     "implementation": "skills/ 方法与模板，scripts/validate.py 验证和白名单打包",
     "reproducible_entry": "python scripts/validate.py --package",
     "user_entry": "README.md 和 skills/overseas-radar-b2b-research/SKILL.md",
-    "delivery": "本地独立技能包已准备，GitHub 公开发布待连接恢复"
+    "delivery": "GitHub 公开仓库 yaoadms-dot/overseas-radar-skill；v0.1.0 下载包、SHA256SUMS、匿名下载核对及 CI 成功；真实宿主/商业验证另行记录"
   },
   "stages": {
     "明确目标": {
@@ -65,9 +65,12 @@
       "evidence": []
     },
     "验收": {
-      "status": "pending",
-      "reason": "本地检查已准备，远程公开发布仍待实际完成",
-      "evidence": []
+      "status": "complete",
+      "reason": "",
+      "evidence": [
+        "docs/VALIDATION.md",
+        "任务清单.md"
+      ]
     }
   },
   "checks": [

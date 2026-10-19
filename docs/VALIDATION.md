@@ -19,6 +19,13 @@
 
 evals/scenarios.md 提供后续试用场景，不是这些场景已经执行的证据。静态通过不证明模型每次正确，也不能保证所有宿主的兼容性。
 
-远程发布状态以任务清单和后续 GitHub 核对记录为准。
+## 公开发布核对
 
-工程基准完整性、明确目标与命令验证通过；资源审计记录 47 个工作文件、零候选大文件重复。两次最终打包校验值一致。
+- 仓库：https://github.com/yaoadms-dot/overseas-radar-skill ，API 未登录请求确认 `private=false`。
+- 版本：https://github.com/yaoadms-dot/overseas-radar-skill/releases/tag/v0.1.0 。
+- 发布来源提交：`484b340dbd3b17923e342cc092ea4a1db9781a50`。
+- [GitHub 自动检查](https://github.com/yaoadms-dot/overseas-radar-skill/actions/runs/39227821778)：completed / success，对应上述来源提交。
+- ZIP 安装包与 SHA256SUMS.txt 都通过匿名下载；长度及 SHA-256 与本地一致。ZIP 为 14714 字节，包含 9 个条目。
+- 发布提交中的远程 SKILL.md 与本地文本一致。没有改变原软件仓库的文件或可见性。
+
+工程基准完整性、明确目标与命令验证通过；资源审计为零候选大文件重复。两次最终打包校验值一致。最终验收执行记录保存在本地工程回执中，不上传凭据或本机运行记录。
