@@ -19,3 +19,5 @@ jobs:
         with:
           name: overseas-radar-skill
           path: .local/releases/*
+          include-hidden-files: true
+          if-no-files-found: error
