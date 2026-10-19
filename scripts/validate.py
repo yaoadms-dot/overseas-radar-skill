@@ -94,11 +94,13 @@ def package(paths):
     directory = ROOT / ".local" / "releases"
     directory.mkdir(parents=True, exist_ok=True)
     archive = directory / f"{NAME}-{VERSION}.zip"
-    entries = {f"{NAME}/{p.relative_to(SKILL).as_posix()}": p.read_bytes() for p in paths}
-    entries[f"{NAME}/LICENSE"] = (ROOT / "LICENSE").read_bytes()
+    # Canonical UTF-8/LF keeps Windows working-copy line endings out of releases.
+    entries = {f"{NAME}/{p.relative_to(SKILL).as_posix()}": p.read_text(encoding="utf-8").encode("utf-8") for p in paths}
+    entries[f"{NAME}/LICENSE"] = (ROOT / "LICENSE").read_text(encoding="utf-8").encode("utf-8")
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
         for name, data in sorted(entries.items()):
             info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+            info.create_system = 3
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o100644 << 16
             bundle.writestr(info, data)
