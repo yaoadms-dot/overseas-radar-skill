@@ -1,0 +1,4 @@
+interface:
+  display_name: "Overseas Radar 外贸研究"
+  short_description: "从产品供给或消费需求出发，研究海外买家、采购条件与下一步验证行动"
+  default_prompt: "请用 $overseas-radar-b2b-research 研究我的产品与海外 B2B 采购机会，并给出证据、判断和验证计划。"

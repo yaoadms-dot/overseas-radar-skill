@@ -4,28 +4,30 @@
   "baseline_version": "v1.1.1",
   "created_at": "2026-10-19T08:51:32.860164+00:00",
   "facts": {
-    "goal": "",
-    "audience": "",
-    "scenario": "",
-    "scope": "",
-    "acceptance": "",
-    "chosen_design": "",
-    "input_output": "",
-    "failure_handling": "",
-    "implementation": "",
-    "reproducible_entry": "",
-    "user_entry": "",
-    "delivery": ""
+    "goal": "发布可复用的产品出海与 B2B 机会研究技能",
+    "audience": "外贸从业者与产品研究人员",
+    "scenario": "从需求线索或工厂供给条件研究一个具体产品的下一步",
+    "scope": "Markdown 技能、证据及报告模板、示例、安装与发布",
+    "acceptance": "结构与发布包通过；GitHub 新仓库公开可读；行为与商业验证分别记录",
+    "chosen_design": "独立便携技能与按需 references，不依赖原软件运行时",
+    "input_output": "产品/供给与决策问题输入；证据、判断与验证计划输出",
+    "failure_handling": "未知留空、无联网明确注明、摘要与原页不一致保留冲突",
+    "implementation": "skills/ 方法与模板，scripts/validate.py 验证和白名单打包",
+    "reproducible_entry": "python scripts/validate.py --package",
+    "user_entry": "README.md 和 skills/overseas-radar-b2b-research/SKILL.md",
+    "delivery": "本地独立技能包已准备，GitHub 公开发布待连接恢复"
   },
   "stages": {
     "明确目标": {
-      "status": "pending",
+      "status": "complete",
       "reason": "",
-      "evidence": []
+      "evidence": [
+        "项目说明.md"
+      ]
     },
     "探索方案": {
-      "status": "pending",
-      "reason": "",
+      "status": "skipped",
+      "reason": "轻量方法技能，无需软件探索原型；方案依据见需求与设计",
       "evidence": []
     },
     "建立工程": {
@@ -37,28 +39,34 @@
       ]
     },
     "数据与接口": {
-      "status": "pending",
+      "status": "complete",
       "reason": "",
-      "evidence": []
+      "evidence": [
+        "skills/overseas-radar-b2b-research/references/evidence-schema.md"
+      ]
     },
     "核心功能": {
-      "status": "pending",
+      "status": "complete",
       "reason": "",
-      "evidence": []
+      "evidence": [
+        "skills/overseas-radar-b2b-research/SKILL.md"
+      ]
     },
     "命令验证": {
-      "status": "pending",
+      "status": "complete",
       "reason": "",
-      "evidence": []
+      "evidence": [
+        "docs/VALIDATION.md"
+      ]
     },
     "界面": {
-      "status": "pending",
-      "reason": "",
+      "status": "skipped",
+      "reason": "由宿主提供界面，本仓库只交付技能及文档",
       "evidence": []
     },
     "验收": {
       "status": "pending",
-      "reason": "",
+      "reason": "本地检查已准备，远程公开发布仍待实际完成",
       "evidence": []
     }
   },
@@ -80,6 +88,21 @@
       ],
       "cwd": ".",
       "timeout_seconds": 300
+    },
+    {
+      "id": "skill.release",
+      "enabled": true,
+      "stages": [
+        "命令验证",
+        "验收"
+      ],
+      "program": "python",
+      "args": [
+        "scripts/validate.py",
+        "--package"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 60
     }
   ]
 }
