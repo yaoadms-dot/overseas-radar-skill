@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "template_id": "software-project-baseline",
+  "version": "v1.1.1",
+  "manifest_sha256": "907f1fdcc73ae551a6a04dc8c78638bfe331e0214b51f72f0d38fb56907c9641",
+  "template_sha256": "65fa2547a1934376783c327a9de4ada6d6cb86915362e6974509e5d446961dc9",
+  "generated_at": "2026-10-19T08:51:32.860164+00:00",
+  "upgrade_policy": "explicit-only"
+}

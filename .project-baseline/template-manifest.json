@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "template_id": "software-project-baseline",
+  "version": "v1.1.1",
+  "compatibility": {
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "python_min": "3.10.0",
+    "powershell_min": "7.4.0",
+    "git_min": "2.30.0",
+    "entrypoints": {
+      "win32": {
+        "init": "tools/初始化项目.ps1",
+        "check": "tools/检查项目.ps1"
+      },
+      "darwin": {
+        "init": "tools/initialize-project.sh",
+        "check": "tools/check-project.sh"
+      },
+      "linux": {
+        "init": "tools/initialize-project.sh",
+        "check": "tools/check-project.sh"
+      }
+    },
+    "manifest_schema": 1,
+    "upgrade_policy": "explicit-only; immutable project snapshots"
+  },
+  "variables": {
+    "PROJECT_NAME": {
+      "type": "string",
+      "files": [
+        "templates/AGENTS.md",
+        "templates/project.json",
+        "templates/README.md",
+        "templates/项目说明.md"
+      ]
+    },
+    "GENERATED_AT": {
+      "type": "string",
+      "files": [
+        "templates/project.json",
+        "templates/README.md"
+      ]
+    },
+    "BASELINE_VERSION": {
+      "type": "string",
+      "files": [
+        "templates/AGENTS.md",
+        "templates/project.json",
+        "templates/README.md"
+      ]
+    }
+  },
+  "files": [
+    {
+      "path": "rules.md",
+      "role": "rule",
+      "sha256": "901dafc74000c93e41eb5bc46d2fc332e8d75b72f57e77c6d69b97ef996dfc27"
+    },
+    {
+      "path": "templates/AGENTS.md",
+      "role": "template",
+      "sha256": "e3ae0206e69cbe1db084f7794ba4f9c9c2179ddb33847c609b6d4c87948c561f",
+      "output": "AGENTS.md",
+      "format": "text"
+    },
+    {
+      "path": "templates/gitattributes.txt",
+      "role": "template",
+      "sha256": "96ce3b3266d6b54a13315bdc3cce1b57338b922d630482cec292dbb0d7e36012",
+      "output": ".gitattributes",
+      "format": "text"
+    },
+    {
+      "path": "templates/gitignore.txt",
+      "role": "template",
+      "sha256": "f9d73b3114baabdfc9c11d77ecea911916c1975acfb5c49743d1939375d5c675",
+      "output": ".gitignore",
+      "format": "text"
+    },
+    {
+      "path": "templates/project.json",
+      "role": "template",
+      "sha256": "229a7af0821b0f7874b332d798510af45b4401e14036a2a16fdbb6fa7b565ac9",
+      "output": "project.json",
+      "format": "json"
+    },
+    {
+      "path": "templates/README.md",
+      "role": "template",
+      "sha256": "5437144c8791a714acfdec08ed8d5fa9acad89787b884c73ac8d2539438a05d3",
+      "output": "README.md",
+      "format": "text"
+    },
+    {
+      "path": "templates/任务清单.md",
+      "role": "template",
+      "sha256": "8c36e2e86e5de38abce4b5e2bf1a1a591aac0fb7e6b3472ee629442183265136",
+      "output": "任务清单.md",
+      "format": "text"
+    },
+    {
+      "path": "templates/决策与变更.md",
+      "role": "template",
+      "sha256": "2a6c9eb64faae0b57fe2668ca284ced35e4dfd576d2a28adfc145afd98344bc3",
+      "output": "决策与变更.md",
+      "format": "text"
+    },
+    {
+      "path": "templates/需求与设计.md",
+      "role": "template",
+      "sha256": "e39f1604048e4d424311f18a6119876219752c07a382bb9b414729a3d6bc3b32",
+      "output": "需求与设计.md",
+      "format": "text"
+    },
+    {
+      "path": "templates/项目说明.md",
+      "role": "template",
+      "sha256": "f3718a2dc66ac1bcd346f20ce77c8c81fc71de9272b8fd6d78f91c4a56bb6718",
+      "output": "项目说明.md",
+      "format": "text"
+    },
+    {
+      "path": "tools/audit_resources.py",
+      "role": "tool",
+      "sha256": "ab8eb32ae0653c384b7deabdfd64305020c28de52099df553b4a9859215d487b"
+    },
+    {
+      "path": "tools/baseline.py",
+      "role": "tool",
+      "sha256": "bcfbc795e953e1a3ca533dfc3e2f9fb76dce86313098435fcd0145819818e861"
+    },
+    {
+      "path": "tools/check-project.sh",
+      "role": "tool",
+      "sha256": "7db1cc6f120cd9c6e9d50bf65a908360b627bdb8edd8f219dd33eb9e37565206"
+    },
+    {
+      "path": "tools/initialize-project.sh",
+      "role": "tool",
+      "sha256": "6b59146d83b50d07f9ad040eae9107cdae5babd30e490553291ef71a7399c411"
+    },
+    {
+      "path": "tools/初始化项目.ps1",
+      "role": "tool",
+      "sha256": "672c1aad2a76cbc7595f8214a50d1604ce5f3eb8b00d40b7d5ff7f94b8cfafdb"
+    },
+    {
+      "path": "tools/检查项目.ps1",
+      "role": "tool",
+      "sha256": "8fc3532f28ae6520281ac7a62767a201a29f45377743e16629052d7feb1f25af"
+    }
+  ],
+  "stages": {
+    "明确目标": {
+      "required_fields": [
+        "goal",
+        "audience",
+        "scenario",
+        "scope",
+        "acceptance"
+      ],
+      "requires_commands": false
+    },
+    "探索方案": {
+      "required_fields": [
+        "chosen_design"
+      ],
+      "requires_commands": false
+    },
+    "建立工程": {
+      "required_fields": [],
+      "requires_commands": false
+    },
+    "数据与接口": {
+      "required_fields": [
+        "input_output",
+        "failure_handling"
+      ],
+      "requires_commands": false
+    },
+    "核心功能": {
+      "required_fields": [
+        "implementation"
+      ],
+      "requires_commands": true
+    },
+    "命令验证": {
+      "required_fields": [
+        "reproducible_entry"
+      ],
+      "requires_commands": true
+    },
+    "界面": {
+      "required_fields": [
+        "user_entry"
+      ],
+      "requires_commands": true
+    },
+    "验收": {
+      "required_fields": [
+        "delivery",
+        "acceptance"
+      ],
+      "requires_commands": true
+    }
+  }
+}

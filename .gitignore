@@ -1,0 +1,15 @@
+.local/
+.baseline-owner.json
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.venv/
+*.db
+*.sqlite*
+*.dpapi
+*.pem
+*.key

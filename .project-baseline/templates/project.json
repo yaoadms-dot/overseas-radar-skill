@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "name": "{{PROJECT_NAME}}",
+  "baseline_version": "{{BASELINE_VERSION}}",
+  "created_at": "{{GENERATED_AT}}",
+  "facts": {
+    "goal": "", "audience": "", "scenario": "", "scope": "", "acceptance": "",
+    "chosen_design": "", "input_output": "", "failure_handling": "",
+    "implementation": "", "reproducible_entry": "", "user_entry": "", "delivery": ""
+  },
+  "stages": {
+    "明确目标": {"status": "pending", "reason": "", "evidence": []},
+    "探索方案": {"status": "pending", "reason": "", "evidence": []},
+    "建立工程": {"status": "complete", "reason": "", "evidence": ["README.md", "AGENTS.md"]},
+    "数据与接口": {"status": "pending", "reason": "", "evidence": []},
+    "核心功能": {"status": "pending", "reason": "", "evidence": []},
+    "命令验证": {"status": "pending", "reason": "", "evidence": []},
+    "界面": {"status": "pending", "reason": "", "evidence": []},
+    "验收": {"status": "pending", "reason": "", "evidence": []}
+  },
+  "checks": [
+    {
+      "id": "resources.duplicate-budget",
+      "enabled": true,
+      "stages": ["命令验证", "验收"],
+      "program": "python",
+      "args": [".project-baseline/tools/audit_resources.py", "--root", ".", "--output", ".local/resource-audit.json"],
+      "cwd": ".",
+      "timeout_seconds": 300
+    }
+  ]
+}
